@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frontend Mentor | Contact form</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="./src/assets/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./src/css/main.scss">
+</head>
+<body>
+  <main class="container">
+    <form class="form">
+      <h1 class="title">Contact Us</h1>
+      <div class="row">
+        <div class="input-group">
+          <label for="firstName">First Name *</label>
+          <!-- This field is required -->
+          <input type="text" id="firstName" name="firstName">
+        </div>
+        <div class="input-group">
+          <label for="lastName">Last Name *</label>
+          <!-- This field is required -->
+          <input type="text" id="lastName" name="lastName">
+        </div>
+      </div>
+      <div class="input-group">
+        <label for="email">Email Address *</label>
+        <!-- Please enter a valid email address
+        This field is required -->
+        <input type="email" id="email" name="email">
+      </div>
+
+      <div class="input-group">
+        <label for="">Query Type *</label>
+        <!-- Please select a query type -->
+        <div class="row">
+          <label class="input-group--radio" for="generalEnquiry">
+            <input type="radio" name="queryType" id="generalEnquiry">
+            <span>General Enquiry</span>
+          </label>
+          
+          <label class="input-group--radio" for="supportRequest">
+            <input type="radio" name="queryType" id="supportRequest">
+            <span>Support Request</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label for="message">Message *</label>
+        <!-- This field is required -->
+        <textarea class="message-box" name="message" id="message"></textarea>
+      </div>
+
+      <label class="input-group--checkbox" for="checkConsent">
+        <input type="checkbox" name="checkConsent" id="checkConsent">
+        <span>I consent to being contacted by the team *</span>
+        <!-- To submit this form, please consent to being contacted -->
+      </label>
+
+      <button type="submit" class="btn-primary">Submit</button>
+    </form>
+  </main>
+
+  <!-- Message Sent!
+  Thanks for completing the form. We'll be in touch soon! -->
+  
+  <footer class="attribution">
+    <p>Challenge by <a href="https://www.frontendmentor.io/challenges/contact-form--G-hYlqKJj">Frontend Mentor</a></p>
+    <div class="bullet"></div>
+    <p>Coded by <a href="https://www.frontendmentor.io/profile/otaviozerotwo">Otávio Cardoso</a></p>
+  </footer>
+</body>
+</html>

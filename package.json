@@ -1,0 +1,18 @@
+{
+  "name": "contact-form-main",
+  "version": "1.0.0",
+  "description": "lib para toast  \r https://github.com/apvarun/toastify-js",
+  "scripts": {
+    "dev": "parcel index.html src/css/main.scss",
+    "build": "parcel build index.html --dist-dir dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.16.4",
+    "parcel": "^2.16.4",
+    "sass": "^1.102.0"
+  }
+}
