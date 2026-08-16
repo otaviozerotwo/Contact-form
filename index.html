@@ -12,54 +12,56 @@
 </head>
 <body>
   <main class="container">
-    <form class="form">
+    <form class="form" id="form">
       <h1 class="title">Contact Us</h1>
       <div class="row">
-        <div class="input-group">
+        <div class="input-group" id="inputGroupFirstName">
           <label for="firstName">First Name *</label>
-          <!-- This field is required -->
           <input type="text" id="firstName" name="firstName">
+          <span class="error-message">This field is required</span>
         </div>
-        <div class="input-group">
+        <div class="input-group" id="inputGroupLastName">
           <label for="lastName">Last Name *</label>
-          <!-- This field is required -->
           <input type="text" id="lastName" name="lastName">
+          <span class="error-message">This field is required</span>
         </div>
       </div>
-      <div class="input-group">
+      <div class="input-group" id="inputGroupEmail">
         <label for="email">Email Address *</label>
-        <!-- Please enter a valid email address
-        This field is required -->
+        <!-- Please enter a valid email address -->
         <input type="email" id="email" name="email">
+        <span class="error-message">This field is required</span>
       </div>
 
-      <div class="input-group">
+      <div class="input-group" id="inputGroupQueryType">
         <label for="">Query Type *</label>
-        <!-- Please select a query type -->
         <div class="row">
           <label class="input-group--radio" for="generalEnquiry">
-            <input type="radio" name="queryType" id="generalEnquiry">
+            <input type="radio" name="queryType" id="generalEnquiry" value="generalEnquiry">
             <span>General Enquiry</span>
           </label>
           
           <label class="input-group--radio" for="supportRequest">
-            <input type="radio" name="queryType" id="supportRequest">
+            <input type="radio" name="queryType" id="supportRequest" value="supportRequest">
             <span>Support Request</span>
           </label>
         </div>
+        <span class="error-message">Please select a query type</span>
       </div>
 
-      <div class="input-group">
+      <div class="input-group" id="inputGroupMessage">
         <label for="message">Message *</label>
-        <!-- This field is required -->
         <textarea class="message-box" name="message" id="message"></textarea>
+        <span class="error-message">This field is required</span>
       </div>
 
-      <label class="input-group--checkbox" for="checkConsent">
-        <input type="checkbox" name="checkConsent" id="checkConsent">
-        <span>I consent to being contacted by the team *</span>
-        <!-- To submit this form, please consent to being contacted -->
-      </label>
+      <div id="checkboxGroup">
+        <label class="input-group--checkbox" for="checkConsent">
+          <input type="checkbox" name="checkConsent" id="checkConsent">
+          <span>I consent to being contacted by the team *</span>
+        </label>
+        <span class="error-message">To submit this form, please consent to being contacted</span>
+      </div>
 
       <button type="submit" class="btn-primary">Submit</button>
     </form>
@@ -73,5 +75,7 @@
     <div class="bullet"></div>
     <p>Coded by <a href="https://www.frontendmentor.io/profile/otaviozerotwo">Otávio Cardoso</a></p>
   </footer>
+
+  <script src="src/js/main.js" type="module"></script>
 </body>
 </html>
