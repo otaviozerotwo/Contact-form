@@ -1,7 +1,7 @@
 const inputError = (element, elementContainer) => {
   const spanErrorMessage = elementContainer.querySelector('.error-message');
 
-  if (element.value === '' || element.value == false) {
+  if (element.value === '') {
     elementContainer.classList.add('invalid-field');
     spanErrorMessage.style.display = 'block';
 
