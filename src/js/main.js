@@ -1,4 +1,4 @@
-import { inputError, radioError, checkboxError } from './errorHandler';
+import { inputError, radioError, checkboxError, emailError } from './errorHandler';
 
 const form = document.getElementById('form');
 const inputGroupFirstName = document.getElementById('inputGroupFirstName');
@@ -18,7 +18,7 @@ const validateForm = () => {
 
   const isFirstNameValid = inputError(firstName, inputGroupFirstName);
   const isLastNameValid = inputError(lastName, inputGroupLastName);
-  const isEmailValid = inputError(email, inputGroupEmail);
+  const isEmailValid = emailError(email, inputGroupEmail);
   const isQueryTypeValid = radioError(queryType, inputGroupQueryType);
   const isMessageValid = inputError(message, inputGroupMessage);
   const isCheckConsentValid = checkboxError(checkConsent, checkboxGroup);
