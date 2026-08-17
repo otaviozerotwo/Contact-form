@@ -1,4 +1,5 @@
 import { inputError, radioError, checkboxError, emailError } from './errorHandler';
+import toast from './toast';
 
 const form = document.getElementById('form');
 const inputGroupFirstName = document.getElementById('inputGroupFirstName');
@@ -42,6 +43,9 @@ form.addEventListener('submit', (event) => {
   
   const isFormValid = validateForm();
 
-  isFormValid && form.reset();
+  if (isFormValid) {
+    form.reset()
+    toast();
+  }
 });
 

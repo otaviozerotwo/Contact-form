@@ -1,0 +1,35 @@
+@use 'variables';
+
+.toast-container {
+  padding: 1.5rem;
+  background-color: var(--color-green-900);
+  border-radius: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  margin-top: 12px;
+
+  div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  img {
+    height: 18px;
+    width: 18px;
+  }
+}
+
+.toast-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-white);
+}
+
+.toast-text {
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: var(--color-white);
+  opacity: 0.8;
+}
