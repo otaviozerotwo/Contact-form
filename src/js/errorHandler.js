@@ -1,4 +1,4 @@
-import { validateEmail } from "./utils";
+import { validateEmail } from './utils';
 
 const inputError = (element, elementContainer) => {
   const spanErrorMessage = elementContainer.querySelector('.error-message');
