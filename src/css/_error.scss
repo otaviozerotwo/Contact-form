@@ -1,5 +1,10 @@
 .error-message {
-  display: none;
+  display: block;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding-top: 0;
+  transition: max-height 0.5s ease, opacity 0.5s ease, padding-top 0.5s ease;
 }
 
 .invalid-field {
@@ -10,6 +15,8 @@
 
   .error-message {
     display: block;
+    max-height: fit-content;
+    opacity: 1;
     padding-top: 0.5rem;
     font-size: 14px;
     color: var(--color-red);
