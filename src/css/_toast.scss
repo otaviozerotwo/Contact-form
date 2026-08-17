@@ -33,3 +33,15 @@
   color: var(--color-white);
   opacity: 0.8;
 }
+
+@media (max-width: 425px) {
+  .toast-container {
+    width: 88%;
+  }
+
+  .toast-position-mobile {
+    top: 50% !important;
+    bottom: auto !important;
+    transform: translateY(-50%) !important;
+  }
+}

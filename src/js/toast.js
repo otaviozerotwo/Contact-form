@@ -26,13 +26,16 @@ container.appendChild(text);
 const toast = () => {
   Toastify({
     node: container,
-    duration: 1000000,
+    duration: 5000,
     close: false,
     gravity: 'top',
     position: 'center',
     stopOnFocus: true,
+    className: 'toast-position-mobile',
     style: {
       position: 'absolute',
+      display: 'flex',
+      justifyContent: 'center'
     }
   }).showToast();
 
