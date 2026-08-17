@@ -1,13 +1,17 @@
 .error-message {
   display: none;
-  padding-top: 0.5rem;
-  font-size: 14px;
-  color: var(--color-red);
 }
 
 .invalid-field {
   input,
   textarea {
     border-color: var(--color-red) !important;
+  }
+
+  .error-message {
+    display: block;
+    padding-top: 0.5rem;
+    font-size: 14px;
+    color: var(--color-red);
   }
 }
