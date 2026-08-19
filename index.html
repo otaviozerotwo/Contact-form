@@ -17,49 +17,131 @@
       <div class="row">
         <div class="input-group" id="inputGroupFirstName">
           <label for="firstName">First Name *</label>
-          <input type="text" autocomplete="given-name" id="firstName" name="firstName">
-          <span class="error-message">This field is required</span>
+          <input 
+            type="text" 
+            autocomplete="given-name" 
+            id="firstName" 
+            name="firstName"
+            aria-describedby="firstNameError"  
+          >
+          <span 
+            class="error-message" 
+            id="firstNameError" 
+            role="alert" 
+            hidden
+          >
+            This field is required
+          </span>
         </div>
         <div class="input-group" id="inputGroupLastName">
           <label for="lastName">Last Name *</label>
-          <input type="text" autocomplete="family-name" id="lastName" name="lastName">
-          <span class="error-message">This field is required</span>
+          <input 
+            type="text" 
+            autocomplete="family-name" 
+            id="lastName" 
+            name="lastName"
+            aria-describedby="lastNameError"  
+          >
+          <span 
+            class="error-message"
+            id="lastNameError"
+            role="alert"
+            hidden  
+          >
+            This field is required
+          </span>
         </div>
       </div>
       <div class="input-group" id="inputGroupEmail">
         <label for="email">Email Address *</label>
-        <input type="email" autocomplete="email" id="email" name="email">
-        <span class="error-message">This field is required</span>
+        <input 
+          type="email" 
+          autocomplete="email" 
+          id="email" 
+          name="email"
+          aria-describedby="emailError"
+        >
+        <span 
+          class="error-message"
+          id="emailError"
+          role="alert"
+          hidden
+        >
+          This field is required
+        </span>
       </div>
 
       <fieldset class="input-group" id="inputGroupQueryType">
         <legend>Query Type *</legend>
         <div class="row">
           <label class="input-group--radio" for="generalEnquiry">
-            <input type="radio" name="queryType" id="generalEnquiry" value="generalEnquiry">
+            <input 
+              type="radio" 
+              name="queryType" 
+              id="generalEnquiry"
+              aria-describedby="queryTypeError"
+              value="generalEnquiry"
+            >
             <span>General Enquiry</span>
           </label>
           
           <label class="input-group--radio" for="supportRequest">
-            <input type="radio" name="queryType" id="supportRequest" value="supportRequest">
+            <input 
+              type="radio" 
+              name="queryType" 
+              id="supportRequest"
+              aria-describedby="queryTypeError"
+              value="supportRequest"
+            >
             <span>Support Request</span>
           </label>
         </div>
-        <span class="error-message">Please select a query type</span>
+        <span 
+          class="error-message" 
+          id="queryTypeError"
+          role="alert"
+          hidden
+        >
+          Please select a query type
+        </span>
       </fieldset>
 
       <div class="input-group" id="inputGroupMessage">
         <label for="message">Message *</label>
-        <textarea class="message-box" name="message" id="message"></textarea>
-        <span class="error-message">This field is required</span>
+        <textarea 
+          class="message-box" 
+          name="message" 
+          id="message"
+          aria-describedby="messageError"
+        ></textarea>
+        <span 
+          class="error-message"
+          id="messageError"
+          role="alert"
+          hidden
+        >
+          This field is required
+        </span>
       </div>
 
       <div id="checkboxGroup">
         <label class="input-group--checkbox" for="checkConsent">
-          <input type="checkbox" name="checkConsent" id="checkConsent">
+          <input 
+            type="checkbox" 
+            id="checkConsent"
+            name="checkConsent"
+            aria-describedby="checkConsentError"
+          >
           <span>I consent to being contacted by the team *</span>
         </label>
-        <span class="error-message">To submit this form, please consent to being contacted</span>
+        <span 
+          class="error-message"
+          id="checkConsentError"
+          role="alert"
+          hidden
+        >
+          To submit this form, please consent to being contacted
+        </span>
       </div>
 
       <button type="submit" class="btn-primary">Submit</button>
