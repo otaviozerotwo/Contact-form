@@ -17,23 +17,23 @@
       <div class="row">
         <div class="input-group" id="inputGroupFirstName">
           <label for="firstName">First Name *</label>
-          <input type="text" id="firstName" name="firstName">
+          <input type="text" autocomplete="given-name" id="firstName" name="firstName">
           <span class="error-message">This field is required</span>
         </div>
         <div class="input-group" id="inputGroupLastName">
           <label for="lastName">Last Name *</label>
-          <input type="text" id="lastName" name="lastName">
+          <input type="text" autocomplete="family-name" id="lastName" name="lastName">
           <span class="error-message">This field is required</span>
         </div>
       </div>
       <div class="input-group" id="inputGroupEmail">
         <label for="email">Email Address *</label>
-        <input type="text" id="email" name="email">
+        <input type="email" autocomplete="email" id="email" name="email">
         <span class="error-message">This field is required</span>
       </div>
 
-      <div class="input-group" id="inputGroupQueryType">
-        <label for="">Query Type *</label>
+      <fieldset class="input-group" id="inputGroupQueryType">
+        <legend>Query Type *</legend>
         <div class="row">
           <label class="input-group--radio" for="generalEnquiry">
             <input type="radio" name="queryType" id="generalEnquiry" value="generalEnquiry">
@@ -46,7 +46,7 @@
           </label>
         </div>
         <span class="error-message">Please select a query type</span>
-      </div>
+      </fieldset>
 
       <div class="input-group" id="inputGroupMessage">
         <label for="message">Message *</label>

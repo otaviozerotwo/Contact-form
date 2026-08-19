@@ -64,8 +64,10 @@ textarea:hover {
     display: flex;
     flex-direction: column;
     margin-bottom: 1rem;
+    border: none;
 
-    > label {
+    > label,
+    legend {
       font-size: 0.875rem;
       margin-bottom: 0.5rem;
     }
