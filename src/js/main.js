@@ -1,8 +1,9 @@
 import { setError, validateInputCheckBox, validateInputRadio, validateInputText } from './errorHandler';
-import toast from './toast';
 import { validateEmail } from './utils';
+import showToast from './toast';
 
 const form = document.getElementById('form');
+const toastElement = document.getElementById('toast');
 
 const validateForm = () => {
   const firstName = document.getElementById('firstName');
@@ -53,7 +54,7 @@ form.addEventListener('submit', (event) => {
 
   if (isFormValid) {
     form.reset()
-    toast();
+    showToast(toastElement);
 
     return;
   } else {
