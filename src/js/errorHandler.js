@@ -1,66 +1,45 @@
-import { validateEmail } from './utils';
+const setError = (input, message) => {
+  const error = document.getElementById(`${input.id}Error`);
 
-const inputError = (element, elementContainer) => {
-  if (element.value === '') {
-    elementContainer.classList.add('invalid-field');
+  input.setAttribute('aria-invalid', String(Boolean(message)));
 
+  error.textContent = message ?? '';
+  error.hidden = !message;
+}
+
+const validateInputText = (input, message) => {
+  if (!input.value) {
+    setError(input, message);
     return false;
   } else {
-    elementContainer.classList.remove('invalid-field');
-
+    setError(input, null);
     return true;
   }
 }
 
-const radioError = (element, elementContainer) => {
-  if (!element) {
-    elementContainer.classList.add('invalid-field');
-
+const validateInputRadio = (input, container, message) => {
+  if (!input) {
+    setError(container, message);
     return false;
   } else {
-    elementContainer.classList.remove('invalid-field');
-
+    setError(container, null);
     return true;
   }
 }
 
-const checkboxError = (element, elementContainer) => {
-  if (!element) {
-    elementContainer.classList.add('invalid-field');
-
+const validateInputCheckBox = (input, message) => {
+  if (!input.checked) {
+    setError(input, message);
     return false;
   } else {
-    elementContainer.classList.remove('invalid-field');
-
+    setError(input, null);
     return true;
-  }
-}
-
-const emailError = (element, elementContainer) => {
-  const spanErrorMessage = elementContainer.querySelector('.error-message');
-  const isInputValid = inputError(element, elementContainer);
-
-  if (isInputValid) {
-    if (!validateEmail(element.value)) {
-      elementContainer.classList.add('invalid-field');
-      spanErrorMessage.innerText = 'Please enter a valid email address';
-      spanErrorMessage.style.display = 'block'
-
-      return false;
-    } else {
-      spanErrorMessage.style.display = 'none';
-      elementContainer.classList.remove('invalid-field');
-
-      return true;
-    }
-  } else {
-    return false;
   }
 }
 
 export {
-  inputError,
-  radioError,
-  checkboxError,
-  emailError
+  setError,
+  validateInputText,
+  validateInputRadio,
+  validateInputCheckBox
 }

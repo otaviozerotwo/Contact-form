@@ -1,13 +1,10 @@
-.invalid-field {
-  input,
-  textarea {
-    border-color: var(--color-red) !important;
-  }
+input[aria-invalid=true],
+textarea[aria-invalid=true] {
+  border-color: var(--color-red);
+}
 
-  .error-message {
-    display: block;
-    padding-top: 0.5rem;
-    font-size: 1rem;
-    color: var(--color-red);
-  }
+.error-message {
+  padding-top: 0.5rem;
+  font-size: 1rem;
+  color: var(--color-red);
 }

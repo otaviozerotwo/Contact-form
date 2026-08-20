@@ -15,7 +15,7 @@
     <form class="form" id="form">
       <h1 class="title">Contact Us</h1>
       <div class="row">
-        <div class="input-group" id="inputGroupFirstName">
+        <div class="input-group">
           <label for="firstName">First Name *</label>
           <input 
             type="text" 
@@ -29,11 +29,9 @@
             id="firstNameError" 
             role="alert" 
             hidden
-          >
-            This field is required
-          </span>
+          ></span>
         </div>
-        <div class="input-group" id="inputGroupLastName">
+        <div class="input-group">
           <label for="lastName">Last Name *</label>
           <input 
             type="text" 
@@ -47,12 +45,10 @@
             id="lastNameError"
             role="alert"
             hidden  
-          >
-            This field is required
-          </span>
+          ></span>
         </div>
       </div>
-      <div class="input-group" id="inputGroupEmail">
+      <div class="input-group">
         <label for="email">Email Address *</label>
         <input 
           type="email" 
@@ -66,12 +62,10 @@
           id="emailError"
           role="alert"
           hidden
-        >
-          This field is required
-        </span>
+        ></span>
       </div>
 
-      <fieldset class="input-group" id="inputGroupQueryType">
+      <fieldset class="input-group" id="queryType">
         <legend>Query Type *</legend>
         <div class="row">
           <label class="input-group--radio" for="generalEnquiry">
@@ -101,12 +95,10 @@
           id="queryTypeError"
           role="alert"
           hidden
-        >
-          Please select a query type
-        </span>
+        ></span>
       </fieldset>
 
-      <div class="input-group" id="inputGroupMessage">
+      <div class="input-group">
         <label for="message">Message *</label>
         <textarea 
           class="message-box" 
@@ -119,12 +111,10 @@
           id="messageError"
           role="alert"
           hidden
-        >
-          This field is required
-        </span>
+        ></span>
       </div>
 
-      <div id="checkboxGroup">
+      <div>
         <label class="input-group--checkbox" for="checkConsent">
           <input 
             type="checkbox" 
@@ -139,9 +129,7 @@
           id="checkConsentError"
           role="alert"
           hidden
-        >
-          To submit this form, please consent to being contacted
-        </span>
+        ></span>
       </div>
 
       <button type="submit" class="btn-primary">Submit</button>

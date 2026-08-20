@@ -26,11 +26,11 @@ input[type=checkbox] {
   accent-color: var(--color-green-600);
 }
 
-input {
+input,
+textarea {
   padding: 0.6rem 1.3rem;
   border: 1px solid var(--color-gray-500);
   border-radius: 0.3rem;
-  transition: border-color 0.5s ease;
 }
 
 input:focus,
@@ -111,9 +111,6 @@ textarea:hover {
   .message-box {
     resize: none;
     height: 10.5rem;
-    padding: 0.6rem 1.3rem;
-    border-radius: 0.3rem;
-    border: 1px solid var(--color-gray-500);
   }
 }
 

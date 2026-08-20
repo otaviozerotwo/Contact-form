@@ -1,41 +1,49 @@
-import { inputError, radioError, checkboxError, emailError } from './errorHandler';
+import { setError, validateInputCheckBox, validateInputRadio, validateInputText } from './errorHandler';
 import toast from './toast';
+import { validateEmail } from './utils';
 
 const form = document.getElementById('form');
-const inputGroupFirstName = document.getElementById('inputGroupFirstName');
-const firstName = document.getElementById('firstName');
-const inputGroupLastName = document.getElementById('inputGroupLastName');
-const lastName = document.getElementById('lastName');
-const inputGroupEmail = document.getElementById('inputGroupEmail');
-const email = document.getElementById('email');
-const inputGroupMessage = document.getElementById('inputGroupMessage');
-const message = document.getElementById('message');
-const inputGroupQueryType = document.getElementById('inputGroupQueryType');
-const checkboxGroup = document.getElementById('checkboxGroup');
 
 const validateForm = () => {
+  const firstName = document.getElementById('firstName');
+  const lastName = document.getElementById('lastName');
+  const email = document.getElementById('email');
+  const message = document.getElementById('message');
+  const checkConsent = document.getElementById('checkConsent');
+  const queryTypeContainer = document.getElementById('queryType');
   const queryType = document.querySelector('input[name="queryType"]:checked');
-  const checkConsent = document.getElementById('checkConsent').checked;
 
-  const isFirstNameValid = inputError(firstName, inputGroupFirstName);
-  const isLastNameValid = inputError(lastName, inputGroupLastName);
-  const isEmailValid = emailError(email, inputGroupEmail);
-  const isQueryTypeValid = radioError(queryType, inputGroupQueryType);
-  const isMessageValid = inputError(message, inputGroupMessage);
-  const isCheckConsentValid = checkboxError(checkConsent, checkboxGroup);
+  const isFirstNameValid = validateInputText(firstName, 'This field is required');
+  const isLastNameValid = validateInputText(lastName, 'This field is required');
+  
+  const validateInputEmail = () => {
+    if (!email.value) {
+      setError(email, 'This field is required');
+      return false;
+    } else {
+      if (!validateEmail(email.value)) {
+        setError(email, 'Please enter a valid email address');
+        return false;
+      } else {
+        setError(email, null);
+        return true;
+      }
+    }
+  }
 
-  if (
+  const isEmailValid = validateInputEmail();
+  const isMessageValid = validateInputText(message, 'This field is required');
+  const isQueryTypeValid = validateInputRadio(queryType, queryTypeContainer, 'Please select a query type');
+  const isCheckConsentValid = validateInputCheckBox(checkConsent, 'To submit this form, please consent to being contacted');
+
+  return (
     isFirstNameValid &&
     isLastNameValid &&
     isEmailValid &&
     isQueryTypeValid &&
     isMessageValid &&
     isCheckConsentValid
-  ) {
-    return true;
-  } else {
-    return false;
-  }
+  ); 
 }
 
 form.addEventListener('submit', (event) => {
@@ -46,6 +54,12 @@ form.addEventListener('submit', (event) => {
   if (isFormValid) {
     form.reset()
     toast();
+
+    return;
+  } else {
+    form.querySelector('[aria-invalid="true"]')?.focus();
+
+    return;
   }
 });
 
